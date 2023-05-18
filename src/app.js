@@ -1,27 +1,51 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-import { formatWithCursor } from "prettier";
-
 window.onload = () => {
   document.querySelector("#btn").addEventListener("click", () => {
     document.querySelector("#excuse").innerHTML = domain();
   });
-  domain = () => {
-    let first = ["the", "her", "him", "prime", "beauty", "dance"];
-    let second = ["great", "big", "saucy", "blue", "happy", "domain"];
-    let third = [".com", ".org", ".net", ".edu", ".io", ".info"];
+};
+// had to change with to a variable with the let
+let domain = () => {
+  let first = [
+    "A hungry man",
+    "A lonely cat",
+    "A fat dog",
+    "A crazy baby",
+    "An active rabbit",
+    "My hamster"
+  ];
+  let second = ["ate", "burned", "kicked", "stomped", "yelled at", "threw"];
+  let third = [
+    "my homework",
+    "my car",
+    "my computer",
+    "my phone",
+    "my keys",
+    "my shoes"
+  ];
+  let fourth = [
+    "yesterday.",
+    "last weekend.",
+    "last night.",
+    "this morning.",
+    "when I was sleeping.",
+    "before breakfast."
+  ];
+  // the same code from domain name generator won't work- I got it mixed up
+  // BECAUSE this method would have worked on that one not vice versa
+  // this is the format you should follow for the rest
+  // we are assigning the index to a variable and using math.random to get a random item in the array
+  let firstIndex = Math.floor(Math.random() * first.length);
+  let secondIndex = Math.floor(Math.random() * second.length);
+  let thirdIndex = Math.floor(Math.random() * third.length);
+  let fourthIndex = Math.floor(Math.random() * fourth.length);
 
-    for (let i = 0; i < first.length; i++) {
-      for (let a = 0; a < second.length; a++) {
-        for (let b = 0; b < third.length; b++) {
-          console.log(first[i] + second[a] + third[b]);
-        }
-      }
-    }
-    return first[i] + " " + second[a] + " " + third[b];
-  };
+  return (
+    first[firstIndex] +
+    " " +
+    second[secondIndex] +
+    " " +
+    third[thirdIndex] +
+    " " +
+    fourth[fourthIndex]
+  );
 };
